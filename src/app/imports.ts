@@ -8,6 +8,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MetricsModule } from './features/metrics/metrics.module';
+import { VisualizationsModule } from './features/visualizations/visualizations.module';
+import { HomeModule } from './features/home/home.module';
 
 import { reducers } from './reducers';
 import { environment } from '../environments/environment';
@@ -19,7 +21,9 @@ const imports = [
   StoreModule.forRoot(reducers),
   !environment.production ? StoreDevtoolsModule.instrument() : [],
   EffectsModule.forRoot([]),
-  MetricsModule
+  MetricsModule,
+  VisualizationsModule,
+  HomeModule
 ];
 
 export default imports;
