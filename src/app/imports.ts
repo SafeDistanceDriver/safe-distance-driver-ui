@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
@@ -16,6 +17,7 @@ import { environment } from '../environments/environment';
 
 const imports = [
   BrowserModule,
+  BrowserAnimationsModule,
   AppRoutingModule,
   HttpClientModule,
   StoreModule.forRoot(reducers),
