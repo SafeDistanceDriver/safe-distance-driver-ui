@@ -7,6 +7,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 import { VisualizationsComponent } from './visualizations.component';
+import { LineGraphComponent } from './components/line-graph/line-graph.component';
 
 import { reducers } from './reducers';
 
@@ -17,6 +18,6 @@ import { reducers } from './reducers';
     EffectsModule.forFeature([]),
     NgxChartsModule
   ],
-  declarations: [VisualizationsComponent]
+  declarations: [VisualizationsComponent, LineGraphComponent]
 })
 export class VisualizationsModule { }

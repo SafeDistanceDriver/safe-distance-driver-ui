@@ -1,3 +1,16 @@
-<p>
-  visualizations works!
-</p>
+<div class="visualizations">
+  <div class="graph">
+    <app-visualizations-line-graph [title]="'Speed'"
+                                   [settings]="chartSettings"
+                                   [xAxisLabel]="'Time(s)'"
+                                   [yAxisLabel]="'Speed(mph)'"
+                                   [data]="data"></app-visualizations-line-graph>
+  </div>
+  <div class="graph">
+    <app-visualizations-line-graph [title]="'Distance'"
+                                   [settings]="chartSettings"
+                                   [xAxisLabel]="'Time(s)'"
+                                   [yAxisLabel]="'Disance(m)'"
+                                   [data]="data"></app-visualizations-line-graph>
+  </div>
+</div>

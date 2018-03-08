@@ -1,0 +1,13 @@
+<h1>{{title}}</h1>
+<ngx-charts-line-chart [view]="settings.view"
+                       [scheme]="settings.colorScheme"
+                       [results]="data"
+                       [gradient]="settings.gradient"
+                       [xAxis]="settings.showXAxis"
+                       [yAxis]="settings.showYAxis"
+                       [legend]="settings.showLegend"
+                       [showXAxisLabel]="settings.showXAxisLabel"
+                       [showYAxisLabel]="settings.showYAxisLabel"
+                       [xAxisLabel]="xAxisLabel"
+                       [yAxisLabel]="yAxisLabel"
+                       [autoScale]="settings.autoScale"></ngx-charts-line-chart>
