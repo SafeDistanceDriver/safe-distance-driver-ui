@@ -27,4 +27,5 @@ export interface ChartSettings {
   showXAxisLabel: boolean;
   showYAxisLabel: boolean;
   autoScale: boolean;
+  animations: boolean;
 }
