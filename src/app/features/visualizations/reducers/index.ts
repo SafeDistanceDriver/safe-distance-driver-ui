@@ -1,6 +1,7 @@
 import { ActionReducerMap, createFeatureSelector, createSelector } from '@ngrx/store';
 import * as fromGraphs from './graphs';
 import { DataPoint, GraphData } from '../models';
+import { formatDateToTime } from '../../../utils/dateHelper';
 
 export interface VisualizationsState {
   graphs: fromGraphs.State;
@@ -23,7 +24,7 @@ export const _selectLatestId = createSelector(_selectGraphsData, data =>
 );
 export const _selectSpeedDataPoints = createSelector(_selectGraphsData, data =>
   data.map(item => <DataPoint>{
-    name: item.date.toTimeString(),
+    name: formatDateToTime(item.date),
     value: item.speed
   })
 );
@@ -35,7 +36,7 @@ export const _selectSpeedGraphData = createSelector(_selectSpeedDataPoints, data
 );
 export const _selectDistanceDataPoints = createSelector(_selectGraphsData, data =>
   data.map(item => <DataPoint>{
-    name: item.date.toTimeString(),
+    name: formatDateToTime(item.date),
     value: item.distance
   })
 );

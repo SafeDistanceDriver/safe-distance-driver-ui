@@ -11,11 +11,14 @@ import { LineGraphComponent } from './components/line-graph/line-graph.component
 
 import { reducers } from './reducers';
 
+import { VisualizationsInitializationEffects } from './effects/initialization.effects';
+import { GraphsEffects } from './effects/graphs.effects';
+
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forFeature('visualizations', reducers),
-    EffectsModule.forFeature([]),
+    EffectsModule.forFeature([VisualizationsInitializationEffects, GraphsEffects]),
     NgxChartsModule
   ],
   declarations: [VisualizationsComponent, LineGraphComponent]

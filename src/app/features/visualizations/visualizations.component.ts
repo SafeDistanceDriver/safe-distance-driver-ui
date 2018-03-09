@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
+import visualizationsComponentSelectors, { State } from './reducers';
 import { ChartSettings, GraphData } from './models';
 
 @Component({
@@ -22,29 +25,12 @@ export class VisualizationsComponent implements OnInit {
     autoScale: true
   };
 
-  data: GraphData[] = [{
-    name: 'Speed',
-    series: [
-      {
-        name: '1',
-        value: 46
-      },
-      {
-        name: '2',
-        value: 45
-      },
-      {
-        name: '3',
-        value: 48
-      },
-      {
-        name: '4',
-        value: 50
-      }
-    ]
-  }];
+  speedGraph$: Observable<GraphData[]>;
+  distanceGraph$: Observable<GraphData[]>;
+  constructor(private store: Store<State>) { }
 
-  constructor() { }
-
-  ngOnInit() { }
+  ngOnInit() {
+    this.speedGraph$ = this.store.select(visualizationsComponentSelectors.speedGraph);
+    this.distanceGraph$ = this.store.select(visualizationsComponentSelectors.distanceGraph);
+  }
 }
