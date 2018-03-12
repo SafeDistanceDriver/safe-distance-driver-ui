@@ -16,7 +16,7 @@ import 'rxjs/add/operator/do';
 export class VisualizationsComponent implements OnInit {
 
   chartSettings: ChartSettings = {
-    view: [700, 400],
+    view: undefined,
     colorScheme: {
       domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
     },
@@ -40,7 +40,7 @@ export class VisualizationsComponent implements OnInit {
     this.latestId$ = this.store.select(visualizationsComponentSelectors.latestId);
     this.speedGraph$ = this.store.select(visualizationsComponentSelectors.speedGraph);
     this.distanceGraph$ = this.store.select(visualizationsComponentSelectors.distanceGraph);
-    this.loadGraphDataSubscription$ = Observable.interval(1000).do(
+    this.loadGraphDataSubscription$ = Observable.interval(500).do(
       () => this.store.dispatch(new graphsActions.LoadData())
     ).subscribe();
   }
