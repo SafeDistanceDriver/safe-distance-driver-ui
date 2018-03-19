@@ -13,6 +13,7 @@ import { reducers } from './reducers';
 
 import { VisualizationsInitializationEffects } from './effects/initialization.effects';
 import { GraphsEffects } from './effects/graphs.effects';
+import { ApiService } from './services/api.service';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { GraphsEffects } from './effects/graphs.effects';
     EffectsModule.forFeature([VisualizationsInitializationEffects, GraphsEffects]),
     NgxChartsModule
   ],
-  declarations: [VisualizationsComponent, LineGraphComponent]
+  declarations: [VisualizationsComponent, LineGraphComponent],
+  providers: [ApiService]
 })
 export class VisualizationsModule { }

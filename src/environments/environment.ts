@@ -1,5 +1,8 @@
 import { Environment } from '.';
 
 export const environment: Environment = {
-  production: false
+  production: false,
+  urls: {
+    stats: 'http://codejam.zrimsek.com/api/stats'
+  }
 };

@@ -1,5 +1,8 @@
 import { Environment } from '.';
 
 export const environment: Environment = {
-  production: true
+  production: true,
+  urls: {
+    stats: ''
+  }
 };

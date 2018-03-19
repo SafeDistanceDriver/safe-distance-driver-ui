@@ -24,7 +24,7 @@ export const _selectLatestId = createSelector(_selectGraphsData, data =>
 );
 export const _selectSpeedDataPoints = createSelector(_selectGraphsData, data =>
   data.map(item => <DataPoint>{
-    name: formatDateToTime(item.date),
+    name: formatDateToTime(item.time),
     value: item.speed
   })
 );
@@ -36,7 +36,7 @@ export const _selectSpeedGraphData = createSelector(_selectSpeedDataPoints, data
 );
 export const _selectDistanceDataPoints = createSelector(_selectGraphsData, data =>
   data.map(item => <DataPoint>{
-    name: formatDateToTime(item.date),
+    name: formatDateToTime(item.time),
     value: item.distance
   })
 );

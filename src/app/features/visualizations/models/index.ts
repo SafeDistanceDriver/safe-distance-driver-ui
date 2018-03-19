@@ -1,6 +1,6 @@
 export interface ApiResponse {
   id: number;
-  date: Date;
+  time: string;
   distance: number;
   speed: number;
 }
