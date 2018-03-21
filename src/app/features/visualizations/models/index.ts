@@ -28,4 +28,6 @@ export interface ChartSettings {
   showYAxisLabel: boolean;
   autoScale: boolean;
   animations: boolean;
+  yScaleMin: number;
+  yScaleMax: number;
 }

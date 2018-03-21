@@ -15,7 +15,7 @@ import 'rxjs/add/operator/do';
 })
 export class VisualizationsComponent implements OnInit {
 
-  chartSettings: ChartSettings = {
+  speedChartSettings: ChartSettings = {
     view: undefined,
     colorScheme: {
       domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
@@ -26,8 +26,27 @@ export class VisualizationsComponent implements OnInit {
     showLegend: true,
     showXAxisLabel: true,
     showYAxisLabel: true,
-    autoScale: true,
-    animations: true
+    autoScale: false,
+    animations: true,
+    yScaleMin: 0,
+    yScaleMax: 60,
+  };
+
+  distanceChartSettings: ChartSettings = {
+    view: undefined,
+    colorScheme: {
+      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    },
+    gradient: false,
+    showXAxis: true,
+    showYAxis: true,
+    showLegend: true,
+    showXAxisLabel: true,
+    showYAxisLabel: true,
+    autoScale: false,
+    animations: true,
+    yScaleMin: 0,
+    yScaleMax: 500
   };
 
   latestId$: Observable<number>;

@@ -1,14 +1,14 @@
 <div class="visualizations">
   <div class="graph">
     <app-visualizations-line-graph [title]="'Speed'"
-                                   [settings]="chartSettings"
+                                   [settings]="speedChartSettings"
                                    [xAxisLabel]="'Time(s)'"
                                    [yAxisLabel]="'Speed(mph)'"
                                    [data]="speedGraph$ | async"></app-visualizations-line-graph>
   </div>
   <div class="graph">
     <app-visualizations-line-graph [title]="'Distance'"
-                                   [settings]="chartSettings"
+                                   [settings]="distanceChartSettings"
                                    [xAxisLabel]="'Time(s)'"
                                    [yAxisLabel]="'Disance(m)'"
                                    [data]="distanceGraph$ | async"></app-visualizations-line-graph>

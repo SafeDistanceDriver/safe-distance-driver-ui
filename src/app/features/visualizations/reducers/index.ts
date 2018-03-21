@@ -31,7 +31,7 @@ export const _selectSpeedDataPoints = createSelector(_selectGraphsData, data =>
 export const _selectSpeedGraphData = createSelector(_selectSpeedDataPoints, dataPoints =>
   <GraphData[]>[{
     name: 'Speed',
-    series: dataPoints
+    series: dataPoints.reverse()
   }]
 );
 export const _selectDistanceDataPoints = createSelector(_selectGraphsData, data =>
@@ -43,7 +43,7 @@ export const _selectDistanceDataPoints = createSelector(_selectGraphsData, data 
 export const _selectDistanceGraphData = createSelector(_selectDistanceDataPoints, dataPoints =>
   <GraphData[]>[{
     name: 'Distance',
-    series: dataPoints,
+    series: dataPoints.reverse(),
   }]
 );
 
