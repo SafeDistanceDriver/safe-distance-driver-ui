@@ -46,4 +46,5 @@ export interface GaugeSettings {
   units: string;
   bigSegments: number;
   smallSegments: number;
+  animations: boolean;
 }

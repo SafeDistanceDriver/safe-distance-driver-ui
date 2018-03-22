@@ -60,7 +60,12 @@ export const _selectRatingGraphData = createSelector(_selectRatingDataPoints, da
     series: dataPoints.reverse(),
   }]
 );
-export const _selectRatingGaugeData = createSelector(_selectRatingDataPoints, dataPoints => <DataPoint[]>[dataPoints[0]]);
+export const _selectRatingGaugeData = createSelector(_selectRatingDataPoints, dataPoints =>
+  <DataPoint[]>[{
+    name: 'Rating',
+    value: dataPoints.reduce((a, b) => a + b.value, 0) / dataPoints.length
+  }]
+);
 
 const visualizationsComponentSelectors = {
   latestId: _selectLatestId,

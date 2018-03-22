@@ -81,7 +81,8 @@ export class VisualizationsComponent implements OnInit {
     startAngle: -120,
     units: 'Rating',
     bigSegments: 10,
-    smallSegments: 5
+    smallSegments: 5,
+    animations: false
   };
 
   speedGraph$: Observable<GraphData[]>;
