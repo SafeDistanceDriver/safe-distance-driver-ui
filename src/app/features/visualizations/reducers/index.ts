@@ -20,7 +20,7 @@ export const _selectGraphs = createSelector(_selectVisualizationsFeature, state 
 
 export const _selectGraphsData = createSelector(_selectGraphs, graphs => graphs.data);
 export const _selectLatestId = createSelector(_selectGraphsData, data =>
-  data.length ? data[data.length - 1].id : 0
+  data.length ? data[0].id : 0
 );
 export const _selectSpeedDataPoints = createSelector(_selectGraphsData, data =>
   data.map(item => <DataPoint>{

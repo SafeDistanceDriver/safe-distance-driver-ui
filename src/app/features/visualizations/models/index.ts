@@ -30,4 +30,5 @@ export interface ChartSettings {
   animations: boolean;
   yScaleMin: number;
   yScaleMax: number;
+  curve: any;
 }

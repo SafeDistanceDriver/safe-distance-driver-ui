@@ -15,8 +15,18 @@ export class GraphsEffects {
   @Effect() loadData$ =
     this.actions$
       .ofType(graphsActions.LOAD_DATA)
-      .switchMap(() => this.apiService.getApiResponse()
+      .switchMap(() => this.apiService.getAllData()
         .map(data => {
           return new graphsActions.LoadDataSucceeded(data);
+        }));
+
+  @Effect() loadDataNewerThan$ =
+    this.actions$
+      .ofType(graphsActions.LOAD_DATA_NEWER_THAN)
+      .map(action => action as graphsActions.LoadDataNewerThan)
+      .map(action => action.id)
+      .switchMap((id) => this.apiService.getDataNewerThan(id)
+        .map(data => {
+          return new graphsActions.LoadDataNewerThanSucceeded(data);
         }));
 }

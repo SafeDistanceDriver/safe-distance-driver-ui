@@ -10,7 +10,12 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  getApiResponse(): Observable<ApiResponse[]> {
+  getAllData(): Observable<ApiResponse[]> {
     return this.http.get<ApiResponse[]>(environment.urls.stats);
+  }
+
+  getDataNewerThan(id: number): Observable<ApiResponse[]> {
+    const url = `${environment.urls.newerThan}${id}`;
+    return this.http.get<ApiResponse[]>(url);
   }
 }

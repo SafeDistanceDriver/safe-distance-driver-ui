@@ -7,6 +7,7 @@ import visualizationsComponentSelectors, { State } from './reducers';
 import { ChartSettings, GraphData } from './models';
 import 'rxjs/add/observable/interval';
 import 'rxjs/add/operator/do';
+import { curveCardinal } from 'd3-shape';
 
 @Component({
   selector: 'app-visualizations',
@@ -30,6 +31,7 @@ export class VisualizationsComponent implements OnInit {
     animations: true,
     yScaleMin: 0,
     yScaleMax: 60,
+    curve: curveCardinal
   };
 
   distanceChartSettings: ChartSettings = {
@@ -44,23 +46,24 @@ export class VisualizationsComponent implements OnInit {
     showXAxisLabel: true,
     showYAxisLabel: true,
     autoScale: false,
-    animations: true,
+    animations: false,
     yScaleMin: 0,
-    yScaleMax: 500
+    yScaleMax: 500,
+    curve: curveCardinal
   };
 
-  latestId$: Observable<number>;
   speedGraph$: Observable<GraphData[]>;
   distanceGraph$: Observable<GraphData[]>;
   loadGraphDataSubscription$: Subscription;
   constructor(private store: Store<State>) { }
 
   ngOnInit() {
-    this.latestId$ = this.store.select(visualizationsComponentSelectors.latestId);
     this.speedGraph$ = this.store.select(visualizationsComponentSelectors.speedGraph);
     this.distanceGraph$ = this.store.select(visualizationsComponentSelectors.distanceGraph);
-    this.loadGraphDataSubscription$ = Observable.interval(500).do(
-      () => this.store.dispatch(new graphsActions.LoadData())
-    ).subscribe();
+
+    this.loadGraphDataSubscription$ = Observable.interval(500).do(() => {
+      this.store.select(visualizationsComponentSelectors.latestId).subscribe(id =>
+        this.store.dispatch(new graphsActions.LoadDataNewerThan(id)));
+    }).subscribe();
   }
 }

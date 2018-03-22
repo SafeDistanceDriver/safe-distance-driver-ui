@@ -16,6 +16,10 @@ export function reducer(state: State = initialState, action: actions.All): State
     case actions.LOAD_DATA_SUCCEEDED: {
       return tassign(state, { data: action.data });
     }
+    case actions.LOAD_DATA_NEWER_THAN_SUCCEEDED: {
+      const dataToKeep = state.data.slice(0, state.data.length - action.data.length);
+      return tassign(state, { data: [...action.data, ...dataToKeep] });
+    }
     default: {
       return state;
     }

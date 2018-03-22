@@ -13,5 +13,19 @@ export class LoadDataSucceeded implements Action {
   constructor(public data: ApiResponse[]) { }
 }
 
+export const LOAD_DATA_NEWER_THAN = '[Graphs] Load Data Newer Than';
+export class LoadDataNewerThan implements Action {
+  readonly type = LOAD_DATA_NEWER_THAN;
+  constructor(public id: number) { }
+}
+
+export const LOAD_DATA_NEWER_THAN_SUCCEEDED = '[Graphs] Load Data Newer Than Succeeded';
+export class LoadDataNewerThanSucceeded implements Action {
+  readonly type = LOAD_DATA_NEWER_THAN_SUCCEEDED;
+  constructor(public data: ApiResponse[]) { }
+}
+
 export type All = LoadData |
-  LoadDataSucceeded;
+  LoadDataSucceeded |
+  LoadDataNewerThan |
+  LoadDataNewerThanSucceeded;
