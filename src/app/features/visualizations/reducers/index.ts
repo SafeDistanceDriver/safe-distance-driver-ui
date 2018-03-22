@@ -34,6 +34,7 @@ export const _selectSpeedGraphData = createSelector(_selectSpeedDataPoints, data
     series: dataPoints.reverse()
   }]
 );
+
 export const _selectDistanceDataPoints = createSelector(_selectGraphsData, data =>
   data.map(item => <DataPoint>{
     name: formatDateToTime(item.time),
@@ -47,10 +48,26 @@ export const _selectDistanceGraphData = createSelector(_selectDistanceDataPoints
   }]
 );
 
+export const _selectRatingDataPoints = createSelector(_selectGraphsData, data =>
+  data.map(item => <DataPoint>{
+    name: formatDateToTime(item.time),
+    value: item.rating
+  })
+);
+export const _selectRatingGraphData = createSelector(_selectRatingDataPoints, dataPoints =>
+  <GraphData[]>[{
+    name: 'Rating',
+    series: dataPoints.reverse(),
+  }]
+);
+export const _selectRatingGaugeData = createSelector(_selectRatingDataPoints, dataPoints => <DataPoint[]>[dataPoints[0]]);
+
 const visualizationsComponentSelectors = {
   latestId: _selectLatestId,
   speedGraph: _selectSpeedGraphData,
-  distanceGraph: _selectDistanceGraphData
+  distanceGraph: _selectDistanceGraphData,
+  ratingGraph: _selectRatingGraphData,
+  ratingGauge: _selectRatingGaugeData
 };
 
 export default visualizationsComponentSelectors;

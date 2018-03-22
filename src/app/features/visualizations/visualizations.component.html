@@ -1,16 +1,32 @@
-<div class="visualizations">
-  <div class="graph">
-    <app-visualizations-line-graph [title]="'Speed'"
-                                   [settings]="speedChartSettings"
-                                   [xAxisLabel]="'Time(s)'"
-                                   [yAxisLabel]="'Speed(mph)'"
-                                   [data]="speedGraph$ | async"></app-visualizations-line-graph>
+<div class="content">
+  <div class="visualizations">
+    <div class="graph">
+      <app-visualizations-line-graph [title]="'Speed'"
+                                     [settings]="speedChartSettings"
+                                     [xAxisLabel]="'Time(s)'"
+                                     [yAxisLabel]="'Speed(mph)'"
+                                     [data]="speedGraph$ | async"></app-visualizations-line-graph>
+    </div>
+    <div class="graph">
+      <app-visualizations-line-graph [title]="'Distance from Obstacle'"
+                                     [settings]="distanceChartSettings"
+                                     [xAxisLabel]="'Time(s)'"
+                                     [yAxisLabel]="'Distance(m)'"
+                                     [data]="distanceGraph$ | async"></app-visualizations-line-graph>
+    </div>
   </div>
-  <div class="graph">
-    <app-visualizations-line-graph [title]="'Distance'"
-                                   [settings]="distanceChartSettings"
-                                   [xAxisLabel]="'Time(s)'"
-                                   [yAxisLabel]="'Disance(m)'"
-                                   [data]="distanceGraph$ | async"></app-visualizations-line-graph>
+  <div class="metrics">
+    <div class="graph">
+      <app-visualizations-line-graph [title]="'Rating'"
+                                     [settings]="ratingChartSettings"
+                                     [xAxisLabel]="'Time(s)'"
+                                     [yAxisLabel]="'Rating'"
+                                     [data]="ratingGraph$ | async"></app-visualizations-line-graph>
+    </div>
+    <div class="graph">
+      <app-visualizations-gauge-graph [title]="'Rating'"
+                                      [settings]="ratingGaugeSettings"
+                                      [data]="ratingGauge$ | async"></app-visualizations-gauge-graph>
+    </div>
   </div>
 </div>

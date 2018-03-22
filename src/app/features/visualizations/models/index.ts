@@ -3,6 +3,7 @@ export interface ApiResponse {
   time: string;
   distance: number;
   speed: number;
+  rating: number;
 }
 
 export interface DataPoint {
@@ -31,4 +32,18 @@ export interface ChartSettings {
   yScaleMin: number;
   yScaleMax: number;
   curve: any;
+}
+
+export interface GaugeSettings {
+  view: [number, number] | undefined;
+  colorScheme: {
+    domain: string[]
+  };
+  min: number;
+  max: number;
+  angleSpan: number;
+  startAngle: number;
+  units: string;
+  bigSegments: number;
+  smallSegments: number;
 }

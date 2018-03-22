@@ -1,0 +1,14 @@
+<div class="gauge-graph">
+  <h1>{{title}}</h1>
+  <ngx-charts-gauge [view]="settings.view"
+                    [scheme]="settings.colorScheme"
+                    [results]="data"
+                    [min]="settings.min"
+                    [max]="settings.max"
+                    [angleSpan]="settings.angleSpan"
+                    [startAngle]="settings.startAngle"
+                    [units]="settings.units"
+                    [bigSegments]="settings.bigSegments"
+                    [smallSegments]="settings.smallSegments">
+  </ngx-charts-gauge>
+</div>

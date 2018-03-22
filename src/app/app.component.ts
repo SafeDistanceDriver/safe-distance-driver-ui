@@ -22,11 +22,6 @@ export class AppComponent {
       exact: true
     },
     {
-      caption: 'Metrics',
-      router: ['metrics'],
-      exact: true
-    },
-    {
       caption: 'Visualizations',
       router: ['visualizations'],
       exact: true
