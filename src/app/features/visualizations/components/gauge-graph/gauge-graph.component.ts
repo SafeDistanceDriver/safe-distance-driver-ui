@@ -9,10 +9,27 @@ import { GaugeSettings, DataPoint } from '../../models';
 })
 export class GaugeGraphComponent implements OnInit {
 
-  @Input() title: string;
   @Input() settings: GaugeSettings;
   @Input() data: DataPoint[];
   constructor() { }
 
   ngOnInit() { }
+
+  getRatingColor(): string[] {
+    if (this.data) {
+      const rating = this.data[0].value;
+      if (rating > 50) {
+        return [GREEN];
+      } else if (rating > 25) {
+        return [YELLOW];
+      } else {
+        return [RED];
+      }
+    }
+    return [GREEN];
+  }
 }
+
+const GREEN = '#5AA454';
+const RED = '#A10A28';
+const YELLOW = '#C7B42C';

@@ -60,10 +60,15 @@ export const _selectRatingGraphData = createSelector(_selectRatingDataPoints, da
     series: dataPoints.reverse(),
   }]
 );
-export const _selectRatingGaugeData = createSelector(_selectRatingDataPoints, dataPoints =>
+export const _selectRatingPoints = createSelector(_selectRatingDataPoints, dataPoints => dataPoints.map(item => item.value));
+export const _selectRatingAverage = createSelector(_selectRatingPoints, points => {
+  const average = points.reduce((a, b) => a + b, 0) / points.length;
+  return isNaN(average) ? 0 : average;
+});
+export const _selectRatingGaugeData = createSelector(_selectRatingAverage, average =>
   <DataPoint[]>[{
     name: 'Rating',
-    value: dataPoints.reduce((a, b) => a + b.value, 0) / dataPoints.length
+    value: average
   }]
 );
 

@@ -1,7 +1,6 @@
 <div class="gauge-graph">
-  <h1>{{title}}</h1>
   <ngx-charts-gauge [view]="settings.view"
-                    [scheme]="settings.colorScheme"
+                    [scheme]="{ domain: getRatingColor() }"
                     [results]="data"
                     [min]="settings.min"
                     [max]="settings.max"
