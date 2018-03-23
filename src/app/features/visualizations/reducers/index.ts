@@ -63,7 +63,7 @@ export const _selectRatingGraphData = createSelector(_selectRatingDataPoints, da
 export const _selectRatingPoints = createSelector(_selectRatingDataPoints, dataPoints => dataPoints.map(item => item.value));
 export const _selectRatingAverage = createSelector(_selectRatingPoints, points => {
   const average = points.reduce((a, b) => a + b, 0) / points.length;
-  return isNaN(average) ? 0 : average;
+  return isNaN(average) ? 0 : Math.floor(average);
 });
 export const _selectRatingGaugeData = createSelector(_selectRatingAverage, average =>
   <DataPoint[]>[{

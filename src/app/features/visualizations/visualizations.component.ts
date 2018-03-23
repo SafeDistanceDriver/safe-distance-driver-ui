@@ -19,7 +19,7 @@ export class VisualizationsComponent implements OnInit {
   speedChartSettings: ChartSettings = {
     view: undefined,
     colorScheme: {
-      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+      domain: ['#0066ff']
     },
     gradient: false,
     showXAxis: true,
@@ -37,7 +37,7 @@ export class VisualizationsComponent implements OnInit {
   distanceChartSettings: ChartSettings = {
     view: undefined,
     colorScheme: {
-      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+      domain: ['#4d0099']
     },
     gradient: false,
     showXAxis: true,
@@ -55,7 +55,7 @@ export class VisualizationsComponent implements OnInit {
   ratingChartSettings: ChartSettings = {
     view: undefined,
     colorScheme: {
-      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+      domain: ['#ff6600']
     },
     gradient: false,
     showXAxis: true,
@@ -73,7 +73,7 @@ export class VisualizationsComponent implements OnInit {
   ratingGaugeSettings: GaugeSettings = {
     view: undefined,
     colorScheme: {
-      domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+      domain: ['#5AA454']
     },
     min: 0,
     max: 100,
