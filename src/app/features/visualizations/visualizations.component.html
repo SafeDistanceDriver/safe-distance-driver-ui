@@ -8,10 +8,10 @@
                                      [data]="speedGraph$ | async"></app-visualizations-line-graph>
     </div>
     <div class="graph">
-      <app-visualizations-line-graph [title]="'Distance from Obstacle'"
+      <app-visualizations-line-graph [title]="'Distance'"
                                      [settings]="distanceChartSettings"
                                      [xAxisLabel]="'Time(s)'"
-                                     [yAxisLabel]="'Distance(m)'"
+                                     [yAxisLabel]="'Distance(ft)'"
                                      [data]="distanceGraph$ | async"></app-visualizations-line-graph>
     </div>
   </div>

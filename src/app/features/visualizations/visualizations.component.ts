@@ -29,30 +29,12 @@ export class VisualizationsComponent implements OnInit {
     showYAxisLabel: true,
     autoScale: false,
     animations: false,
-    yScaleMin: 0,
-    yScaleMax: 60,
+    yScaleMin: -5,
+    yScaleMax: 65,
     curve: curveCardinal
   };
 
   distanceChartSettings: ChartSettings = {
-    view: undefined,
-    colorScheme: {
-      domain: ['#4d0099']
-    },
-    gradient: false,
-    showXAxis: true,
-    showYAxis: true,
-    showLegend: true,
-    showXAxisLabel: true,
-    showYAxisLabel: true,
-    autoScale: false,
-    animations: false,
-    yScaleMin: 0,
-    yScaleMax: 500,
-    curve: curveCardinal
-  };
-
-  ratingChartSettings: ChartSettings = {
     view: undefined,
     colorScheme: {
       domain: ['#ff6600']
@@ -65,8 +47,26 @@ export class VisualizationsComponent implements OnInit {
     showYAxisLabel: true,
     autoScale: false,
     animations: false,
-    yScaleMin: 0,
-    yScaleMax: 100,
+    yScaleMin: -50,
+    yScaleMax: 550,
+    curve: curveCardinal
+  };
+
+  ratingChartSettings: ChartSettings = {
+    view: undefined,
+    colorScheme: {
+      domain: ['#4d0099']
+    },
+    gradient: false,
+    showXAxis: true,
+    showYAxis: true,
+    showLegend: true,
+    showXAxisLabel: true,
+    showYAxisLabel: true,
+    autoScale: false,
+    animations: false,
+    yScaleMin: -10,
+    yScaleMax: 110,
     curve: curveCardinal
   };
 
